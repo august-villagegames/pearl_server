@@ -76,9 +76,11 @@ Future<Response> addWeekday(Request request) async {
     // Update rows that match weekdayNum and update the weekdayValue
     db.execute('''
           UPDATE days
-          SET weekdayValue = $value
-          WHERE weekdayNum = $parameter;
+          SET weekdayValue = VALUE HERRE 
+          WHERE weekdayNum = PARAMETER HERE;
       ''');
+
+    //TODO: Correct previous variables in
     //TODO: insert error handling
 
     // reponse
