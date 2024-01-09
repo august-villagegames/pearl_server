@@ -48,19 +48,19 @@ void main(List<String> args) async {
 
   //set up RPI and timer
 
-  final gpio = await initialize_RpiGpio();
+  //  final gpio = await initialize_RpiGpio();
 
-  Timer.periodic(Duration(minutes: 1), (Timer t) async {
-    if (checkDayAndTimeMatch(
-        scheduledTimeInt: scheduledTimeInt,
-        scheduledWeekdaysIntList: scheduledWeekdaysIntList)) {
-      try {
-        await unlockLock(gpio);
-      } catch (e) {
-        print(e);
-      }
-    } else {
-      print('It is not time to open the door yet.');
-    }
-  });
+  // Timer.periodic(Duration(minutes: 1), (Timer t) async {
+  //   if (checkDayAndTimeMatch(
+  //       scheduledTimeInt: scheduledTimeInt,
+  //       scheduledWeekdaysIntList: scheduledWeekdaysIntList)) {
+  //     try {
+  //       await unlockLock(gpio);
+  //     } catch (e) {
+  //       print(e);
+  //     }
+  //   } else {
+  //     print('It is not time to open the door yet.');
+  //   }
+  // });
 }
