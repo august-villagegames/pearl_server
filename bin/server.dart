@@ -15,9 +15,9 @@ final scheduledWeekdaysIntList = [1, 2, 3, 4, 5];
 final _router = Router()
   ..get('/', _rootHandler)
   ..get('/echo/<message>', _echoHandler)
-  ..post('/addWeekday', addWeekday)
-  ..post('/addTime', addTime)
-  ..post('/pullValues', pullValuesFromDb);
+  ..get('/addWeekday', _addWeekday)
+  ..get('/addTime', addTime)
+  ..get('/pullValues', pullValuesFromDb);
 
 Response _rootHandler(Request req) {
   final queryParams = req.requestedUri.queryParameters;
@@ -32,6 +32,12 @@ Response _rootHandler(Request req) {
 Response _echoHandler(Request request) {
   final message = request.params['message'];
   return Response.ok('$message\n');
+}
+
+Response _addWeekday(Request request) {
+  // final response = addWeekday(request);
+  // return Response.ok('weekdays added. $response\n');
+  return Response.ok('weekdays received. test.');
 }
 
 void main(List<String> args) async {
